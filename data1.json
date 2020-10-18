@@ -1,0 +1,63 @@
+[  
+  {  
+    "key":"Architecture 1",
+    "values":[  
+      {  
+        "reason":"Performance",
+        "device":"Architecture 1",
+        "value":1.1
+        
+      },
+      {  
+        "reason":"Value",
+        "device":"Architecture 1",
+        "value":7.58
+      },
+      {  
+        "reason":"Scalability/ Robustness",
+        "device":"Architecture 1",
+        "value":3
+      }
+    ]
+  },
+  {  
+    "key":"Architecture 2",
+    "values":[  
+      {  
+        "reason":"Performance",
+        "device":"Architecture 2",
+        "value":1.1
+      },
+      {  
+        "reason":"Value",
+        "device":"Architecture 2",
+        "value":9.56
+      },
+      {  
+        "reason":"Scalability/ Robustness",
+        "device":"Architecture 2",
+        "value":3
+      }
+    ]
+  },
+  {  
+    "key":"Architecture 3",
+    "values":[  
+      {  
+        "reason":"Performance",
+        "device":"Architecture 3",
+        "value":1.083
+      },
+      {  
+        "reason":"Value",
+        "device":"Architecture 3",
+        "value":11.28
+      },
+      {  
+        "reason":"Scalability/ Robustness",
+        "device":"Architecture 3",
+        "value":3
+      }
+    ]
+  }
+]

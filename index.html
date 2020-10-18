@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/ >
+		<title>Radar Chart</title>
+
+		<!-- Google fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="assets/libs/bootstrap/dist/css/bootstrap.min.css">
+		<!-- D3.js -->
+		<script src="assets/libs/jquery/jquery-3.2.1.slim.min.js"></script>
+		<script src="assets/libs/popper.min.js"></script>
+		<script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="assets/libs/d3/d3.min.js" charset="utf-8"></script>
+		<script src="assets/libs/d3/d3-legend.js" charset="utf-8"></script>
+		
+		<style>
+			body {
+				font-family: 'Roboto', sans-serif;
+				font-size: 12px;
+				font-weight: 300;
+				fill: #242424;
+				text-align: center;
+				text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+				cursor: default;
+			}
+			
+			.tooltip {
+				fill: #333333;
+			}
+			
+			#result {
+				width: 100%;
+				height: 600px;
+				background-color: #f9f9f9;
+				border-left: 2px dashed #999999;
+			}
+			
+			.btn-speak p {
+				display: block;
+			}
+			
+			<!-- label {
+				font-size: 15px;
+			} -->
+		</style>
+	
+	</head>
+	<body>
+		<div class="radarChart"></div>
+
+		<script src="assets/js/radarChart.js"></script>
+		<script>
+			////////////////////////////////////////////////////////////// 
+			//////////////////////// Set-Up ////////////////////////////// 
+			////////////////////////////////////////////////////////////// 
+
+			var margin = {top: 100, right: 100, bottom: 100, left: 100},
+				legendPosition = {x: 275, y: 525},
+				width = Math.min(600, window.innerWidth - 10) - margin.left - margin.right,
+				height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+					
+			////////////////////////////////////////////////////////////// 
+			//////////////////// Draw the Chart ////////////////////////// 
+			////////////////////////////////////////////////////////////// 
+
+			var color = d3.scale.ordinal()
+				.range(["#ff0000","#0000ff","#00ff00"]);
+				
+			var radarChartOptions = {
+			  w: width,
+			  h: height,
+			  margin: margin,
+			  legendPosition: legendPosition,
+			  maxValue: 15,
+			  wrapWidth: 60,
+			  levels: 5,
+			  roundStrokes: true,
+			  color: color,
+			  axisName: "reason",
+			  areaName: "device",
+			  value: "value"
+			};
+
+			//Load the data and Call function to draw the Radar chart
+			d3.json("data1.json", function(error, data){
+				RadarChart(".radarChart", data, radarChartOptions);
+			});
+			
+		</script>
+	</body>
+</html>
